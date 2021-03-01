@@ -30,15 +30,16 @@ const useStyles = makeStyles({
 export default function SimpleCard(props) {
    const classes = useStyles();
 const bull = <span className={classes.bullet}>•</span>;
-//   let MyData = [];
-//   //const title = props.data[0].title_type;
 const regex = /(<([^>]+)>)/ig;
 const [error, setError] = useState(null)
 const [isLoaded, setIsLoaded] = useState(false);
 const [items, setItems] = useState([]);
+const [fetchLink, setFetchLink] = useState(null);
+const defFetch = 'https://brottsplatskartan.se/api/events/?area=uppsala%20l%C3%A4n';
+
 
 useEffect(() => {
-    fetch('https://brottsplatskartan.se/api/events/?area=stockholms%20l%C3%A4n')
+    fetch('https://brottsplatskartan.se/api/events/?area=uppsala%20l%C3%A4n')
     .then(x => x.json())
     .then(
         (result) => {
@@ -54,6 +55,8 @@ useEffect(() => {
 
   return (
     
+
+    
     <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -66,7 +69,7 @@ useEffect(() => {
         {items.title_style}
         </Typography>
         <Typography variant="body2" component="p">
-        {items.content}replace(regex, '')
+        {items.content.replace(regex, '')}
         <br/>
         {items.date_human}
         <br/>
@@ -76,7 +79,7 @@ useEffect(() => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small" href={items.permalink}>Learn More</Button>
       </CardActions>
     </Card>
     

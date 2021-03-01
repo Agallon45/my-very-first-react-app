@@ -53,19 +53,79 @@
   margin-bottom: 1vh;
 }
 
+.SearchField {
+  margin: auto;
+  padding: 10px;
+}
+
+.menu {
+  margin-right: 2.5em;
+}
+
+ul, li{
+  display: inline;
+}
+
 .ArticleChildren{
   background-color: blueviolet;
   margin-bottom: 1vh;
 }
 
-ul, li{
-  display: inline;
-  list-style-type: none;
-  margin: 5px;
+.searchbutton {
+  background-color: #fc3;
+  border: none;
+  padding: 4px;
+  font-weight: bold;
 }
 
-li:hover{
-  background-color: red;
+.searchbutton:hover {
+  background-color: #fc3;
+  border: none;
+  padding: 4px;
+  background-color: #CCCCCC;
+  filter:invert(100%);
+}
+
+.nearme{
+  content:url(https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_pin-32.png);
+  margin-bottom: -6px;
+  height: 25px;
+}
+
+.crime{
+  content:url(https://cdn0.iconfinder.com/data/icons/world-issues/500/handcuffs-64.png);
+  margin-bottom: -21px;
+  height: 55px;
+  margin-left: -15px;
+  margin-right: -10px;
+} 
+
+.city{
+  content:url(https://cdn3.iconfinder.com/data/icons/city-15/100/city_7-32.png);
+  margin-bottom: -10px;
+}
+
+li a {
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  
+}
+
+li a.active {
+  background-color: #fc3;
+  color: black;
+}
+
+li a.active:hover {
+  background-color: #cca329;
+  color: black;
+}
+
+li a:hover:not(.active) {
+  background-color: #CCCCCC;
+  filter:invert(100%);
 }
 
 .container {
@@ -77,5 +137,3 @@ li:hover{
   font-size: calc(10px + 2vmin);
 
 }
-
-
